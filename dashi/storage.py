@@ -61,7 +61,10 @@ def histload(file, histgroup):
                     object
     """
     import tables
-    group = file.getNode(histgroup)
+    if hasattr(file, 'get_node'):
+        group = file.get_node(histgroup)
+    else:
+        group = file.getNode(histgroup)
     attr = group._v_attrs
     histo = None
     
