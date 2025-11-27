@@ -14,7 +14,10 @@ def histsave(histo, file, where, name, overwrite=False):
         overwrite: replace an existing stored histogram
     """
     import tables
-    parentgroup = file.getNode(where)
+    if hasattr(file, 'get_node'):
+        parentgroup = file.get_node(where)
+    else:
+        parentgroup = file.getNode(where)
 
     if name in parentgroup._v_children:
         if not overwrite:
