@@ -13,4 +13,4 @@ the access to the underlying libraries and without being a dependency sink.
 
 The easiest way to install dashi is with `pip`:
 
-	pip install https://github.com/emiddell/dashi/zipball/master
+	pip install https://github.com/Raimer/dashi/zipball/master
