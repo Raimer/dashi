@@ -201,7 +201,7 @@ class histogram(object):
             assert self._h_squaredweights.shape == tuple(datacubeshape)
 
         # present views of the non overflow bins to the outside 
-        self._h_visiblerange = [slice(1,-1) for i in range(self.ndim)]
+        self._h_visiblerange = tuple(slice(1,-1) for i in range(self.ndim))
         self.bincontent      = self._h_bincontent[self._h_visiblerange]
         self.squaredweights  = self._h_squaredweights[self._h_visiblerange]
         self.nbins           = tuple([i-2 for i in self._h_bincontent.shape])
